@@ -4,7 +4,7 @@ import React from 'react';
 const LeftAside = ({categories,isActive}) => {
     return (
         <div>
-            <h1 className='text-xl font-semibold text-[#403F3F] my-3'>All Caterogy</h1>
+            <h1 className='text-xl font-semibold text-[#403F3F] my-3'>All Category</h1>
 
             <div className='flex flex-col gap-3'>
                 {
