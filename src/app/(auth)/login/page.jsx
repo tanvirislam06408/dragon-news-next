@@ -1,5 +1,6 @@
 "use client";
 
+import RightAside from "@/components/pages/homepage/RightAside";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -78,6 +79,7 @@ export default function LoginPage() {
                             </button>
                         </div>
                     </form>
+                    <RightAside/>
 
                     {/* Register link */}
                     <p className="text-center text-sm mt-4">
