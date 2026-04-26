@@ -5,7 +5,7 @@ import userLogo from '@/assets/user.png'
 import NavLink from './NavLink';
 const Navbar = () => {
     return (
-        <div className='flex items-center justify-between container mx-auto mt-5'>
+        <div className='flex items-center justify-between container mx-auto pb-5 mt-5'>
             <div></div>
             <ul className='flex items-center gap-3'>
                 <li>

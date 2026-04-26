@@ -11,7 +11,7 @@ const News = async ({ params }) => {
   const { id } = await params;
   const newsDataByCategory = await newsData(id);
   const categories = await newsCategories();
-
+  const detailsCard='allCard'
 
 
   return (
@@ -28,7 +28,7 @@ const News = async ({ params }) => {
         
         {
          newsDataByCategory.map(newsD=>{
-          return <NewsCard newsD={newsD} key={newsD._id}/>
+          return <NewsCard detailsCard={detailsCard} newsD={newsD} key={newsD._id}/>
          })
         }
             </div>
