@@ -3,7 +3,9 @@
 import RightAside from "@/components/pages/homepage/RightAside";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
@@ -11,7 +13,7 @@ import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
 
-
+    const [showPass,setShowPass]=useState(false);
 
     const {
         register,
@@ -58,16 +60,20 @@ export default function LoginPage() {
                         </div>
 
                         {/* Password */}
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input
-                                type="password"
+                                type={`${showPass ? 'text' : 'password'}`}
                                 placeholder="Enter your password"
                                 className="input input-bordered w-full"
                                 {...register("password", { required: true, minLength: 4 })}
                             />
+                            <span  onClick={()=>setShowPass(!showPass)} className="absolute text-lg cursor-pointer right-5 top-8">
+                                {showPass ? <FaEyeSlash /> :  <FaEye />}
+                                
+                                </span>
                             {errors.password?.type === 'required' && <span className="text-red-500">Password is Required</span>}
                             {errors.password?.type === 'minLength' && <span className="text-red-500">Password must be at last 4 word</span>}
                         </div>
